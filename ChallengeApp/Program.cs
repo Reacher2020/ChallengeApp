@@ -1,5 +1,5 @@
 ﻿string name = "Ewa";
-var plec = 'm'; //m - merzczyzna f - kobieta
+var plec = 'f'; //m - merzczyzna f - kobieta
 int myAge = 15;
 
 
