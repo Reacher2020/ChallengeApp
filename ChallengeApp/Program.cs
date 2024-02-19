@@ -1,25 +1,15 @@
-﻿bool isWoman;
+﻿
+int number = 45667456;
+string numberAsString = number.ToString();
+char[] letters = numberAsString.ToCharArray();
+int[] counter = new int[10];
 
-Console.WriteLine("Podaj imię:");
-var name  = Console.ReadLine();
-
-Console.WriteLine("Podaj płeć m - meżczyna k -kobieta:");
-var sexAsString = Console.ReadLine();
-if (sexAsString =="k") { isWoman = true;  } else isWoman = false;
-
-Console.WriteLine("Podaj wiek:");
-var ageAsString = Console.ReadLine();
-int age = int.Parse(ageAsString)!;
-
-if (isWoman && age < 30)
+foreach (char letter in letters)
 {
-    Console.WriteLine("Kobieta ponizej 30 lat");
+    int index = (int)Char.GetNumericValue(letter);
+    counter[index]++;
 }
-else if (name == "Ewa" && age == 30)
-{ 
-    Console.WriteLine("Ewa lat 30");
-}
-else if (!isWoman && age < 18)
+for (int i = 0; i < 10; i++)
 {
-    Console.WriteLine("Małoletni mężczyzna");
-};
+    Console.WriteLine(i + "  ==> " + counter[i]);
+}
