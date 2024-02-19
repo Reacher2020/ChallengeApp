@@ -1,17 +1,25 @@
-﻿string name = "Ewa";
-var plec = 'f'; //m - merzczyzna f - kobieta
-int myAge = 15;
+﻿bool isWoman;
 
+Console.WriteLine("Podaj imię:");
+var name  = Console.ReadLine();
 
-if ((plec == 'f') && (myAge < 30))
+Console.WriteLine("Podaj płeć m - meżczyna k -kobieta:");
+var sexAsString = Console.ReadLine();
+if (sexAsString =="k") { isWoman = true;  } else isWoman = false;
+
+Console.WriteLine("Podaj wiek:");
+var AgeAsString = Console.ReadLine();
+int age = int.Parse(AgeAsString);
+
+if ((isWoman) && (age < 30))
 {
     Console.WriteLine("Kobieta ponizej 30 lat");
-};
-if ((name == "Ewa") && (myAge == 30))
+}else
+if ((name == "Ewa") && (age == 30))
 { 
     Console.WriteLine("Ewa lat 30");
-};
-if ((plec == 'm') && (myAge < 18))
+}else
+if ((!isWoman) && (age < 18))
 {
     Console.WriteLine("Małoletni mężczyzna");
 };
