@@ -1,6 +1,6 @@
 ﻿namespace ChallengeApp.Tests
 {
-    internal class TypeTests
+    public class TypeTests
     {
         [Test]
         public void Test_Int()
