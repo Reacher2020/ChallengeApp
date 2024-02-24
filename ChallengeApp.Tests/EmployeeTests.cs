@@ -1,6 +1,6 @@
 namespace ChallengeApp.Tests
 {
-    public class Test
+    public class EmployeeTestTest
     { 
     [Test]
     public void WhenAddTwoPositiveScore_ThenShouldReturnCorectResult()
