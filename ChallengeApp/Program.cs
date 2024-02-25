@@ -6,6 +6,8 @@ float min, max, avg;
 List<Employee> employees = new List<Employee>();
 
 employee1.AddGrade(10.98F);
+employee1.AddGrade("Kamil");
+employee1.AddGrade("5000");
 employee1.AddGrade(4.02f);
 
 var statistics = employee1.GetStatistics();
