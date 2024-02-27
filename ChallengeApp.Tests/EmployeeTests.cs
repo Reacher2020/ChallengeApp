@@ -11,8 +11,7 @@ namespace ChallengeApp.Tests
             employee.AddGrade(4.02f);
 
             //Act
-            var statistics = new Statistics();
-            statistics = employee.GetStatistics();
+            var statistics = employee.GetStatistics();
 
             //Assert
             Assert.AreEqual(10.98f, statistics.Max);
@@ -27,8 +26,7 @@ namespace ChallengeApp.Tests
             employee.AddGrade(4.02f);
 
             //Act
-            var statistics = new Statistics();
-            statistics = employee.GetStatistics();
+            var statistics = employee.GetStatistics();
 
             //Assert
             Assert.AreEqual(4.02f, statistics.Min);
