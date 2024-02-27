@@ -81,7 +81,6 @@
                     break;
                 default:
                     throw new Exception("Wrong lrtter");
-                    //Console.WriteLine("Wrong lrtter");
             }
         }
 
