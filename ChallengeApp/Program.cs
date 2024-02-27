@@ -14,7 +14,14 @@ while(true)
     {
         break;
     }
-    employee.AddGrade(imput);
+    try
+    {
+        employee.AddGrade(imput);
+    }
+    catch(Exception ex)
+    {
+        Console.WriteLine($"Exeption catched : {ex.Message}");
+    }
 }
 
 

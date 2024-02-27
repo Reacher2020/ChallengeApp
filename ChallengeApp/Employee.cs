@@ -21,7 +21,7 @@
             }
             else
             {
-                Console.WriteLine("Grade value out of range");
+                throw new Exeption("Grade value out of range");
             }
         }
 
@@ -33,7 +33,7 @@
             }
             else
             {
-                Console.WriteLine("String is'n float");
+                throw new Exception("String is'n float");
             }
         }
 
@@ -80,8 +80,8 @@
                     this.grades.Add(20);
                     break;
                 default:
-                    Console.WriteLine("Wrong lrtter");
-                    break;
+                    throw new Exception("Wrong lrtter");
+                    //Console.WriteLine("Wrong lrtter");
             }
         }
 
