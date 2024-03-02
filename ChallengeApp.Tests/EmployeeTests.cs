@@ -6,7 +6,7 @@ namespace ChallengeApp.Tests
         public void WhenGetStatistics_ShouldReturnCorectMax()
         {
             //Arrange
-            var employee = new Employee("Adam", "Kowalski", 42);
+            var employee = new Employee("Adam", "Kowalski", 42, 'm');
             employee.AddGrade(10.98f);
             employee.AddGrade(4.02f);
 
@@ -21,7 +21,7 @@ namespace ChallengeApp.Tests
         public void WhenGetStatistics_ShouldReturnCorectMin()
         {
             //Arrange
-            var employee = new Employee("Adam", "Kowalski", 42);
+            var employee = new Employee("Adam", "Kowalski", 42, 'm');
             employee.AddGrade(10.98f);
             employee.AddGrade(4.02f);
 
@@ -36,7 +36,7 @@ namespace ChallengeApp.Tests
         public void WhenGetStatistics_ShouldReturnCorectAverange()
         {
  
-            var employee = new Employee("Adam", "Kowalski", 42);
+            var employee = new Employee("Adam", "Kowalski", 42, 'm');
             employee.AddGrade(10.98f);
             employee.AddGrade(4.02f);
 
@@ -51,7 +51,7 @@ namespace ChallengeApp.Tests
         public void WhenAddLetterAsGrade_ShuldReturnCorectAverangIcPoints()
         {
             //Arrange
-            var employee = new Employee("Adam", "Kowalski", 42);
+            var employee = new Employee("Adam", "Kowalski", 42, 'm');
             employee.AddGrade('A');
             employee.AddGrade('E');
 
@@ -66,7 +66,7 @@ namespace ChallengeApp.Tests
         public void WhenAddPointsAsGrade_ShuldReturnCorectAverangIcLetters()
         {
             //Arrange
-            var employee = new Employee("Adam", "Kowalski", 42);
+            var employee = new Employee("Adam", "Kowalski", 42, 'm');
             employee.AddGrade(100);
             employee.AddGrade(20);
 
@@ -81,7 +81,7 @@ namespace ChallengeApp.Tests
         public void WhenAddLetterAsGrade_ShuldReturnCorectMaxIcPoints()
         {
             //Arrange
-            var employee = new Employee("Adam", "Kowalski", 42);
+            var employee = new Employee("Adam", "Kowalski", 42, 'm');
             employee.AddGrade('A');
             employee.AddGrade('E');
 
@@ -96,7 +96,7 @@ namespace ChallengeApp.Tests
         public void WhenAddLetterAsGrade_ShuldReturnCorectMinIcPoints()
         {
             //Arrange
-            var employee = new Employee("Adam", "Kowalski", 42);
+            var employee = new Employee("Adam", "Kowalski", 42, 'm');
             employee.AddGrade('A');
             employee.AddGrade('E');
 
