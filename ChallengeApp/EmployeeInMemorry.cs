@@ -34,7 +34,7 @@
 
         public override void AddGrade(double grade)
         {
-            float gradeAsFloat = grade;
+            float gradeAsFloat = (float)grade;
             this.AddGrade(gradeAsFloat);
         }
 
