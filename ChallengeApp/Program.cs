@@ -5,8 +5,8 @@ Console.WriteLine("Witamy w programie do oceny pracowników");
 Console.WriteLine("=======================================");
 Console.WriteLine();
 
-var employee = new Employee("Pawel", "Sawicki", 45, 'm');
-var supervisior = new Supervisior("Adam", "Kamizelich", 40, 'm');
+var employeInMemorry = new EmployeeInMemorry("Pawel", "Sawicki", 45, 'm');
+var employeeInFile = new EmployeeInFile("Adam", "Kamizelich", 40, 'm');
 
     while (true)
     {
@@ -18,7 +18,7 @@ var supervisior = new Supervisior("Adam", "Kamizelich", 40, 'm');
         }
         try
         {
-            employee.AddGrade(imput);
+            employeInMemorry.AddGrade(imput);
         }
         catch (Exception ex)
         {
@@ -27,7 +27,7 @@ var supervisior = new Supervisior("Adam", "Kamizelich", 40, 'm');
 
     }
 
-    var statistics = employee.GetStatistics();
+    var statistics = employeInMemorry.GetStatistics();
     Console.WriteLine($"Min :{statistics.Min}");
     Console.WriteLine($"Max :{statistics.Max}");
     Console.WriteLine($"Average :{statistics.Average:N2}");
@@ -43,7 +43,7 @@ var supervisior = new Supervisior("Adam", "Kamizelich", 40, 'm');
         }
         try
         {
-            supervisior.AddGrade(imput);
+            employeeInFile.AddGrade(imput);
         }
         catch (Exception ex)
         {
@@ -52,7 +52,7 @@ var supervisior = new Supervisior("Adam", "Kamizelich", 40, 'm');
 
     }
 
-    statistics = supervisior.GetStatistics();
+    statistics = employeeInFile.GetStatistics();
     Console.WriteLine($"Min :{statistics.Min}");
     Console.WriteLine($"Max :{statistics.Max}");
     Console.WriteLine($"Average :{statistics.Average:N2}");

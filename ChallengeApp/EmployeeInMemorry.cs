@@ -1,37 +1,44 @@
 ﻿namespace ChallengeApp
 {
-    public class Employee : IEmployee
+    internal class EmployeeInMemorry : EmployeeBase
     {
         private List<float> grades = new List<float>();
-        public string Name { get; private set; }
-        public string Surname { get; private set; }
-        public int Age { get; private set; }
-        public char Sex { get; private set; }
-
-        public Employee(string name, string surname, int age, char sex) 
-           
+        public EmployeeInMemorry(string name, string surname, int age, char sex) 
+            : base(name, surname, age, sex)
         {
-
-            this.Name = name;
-            this.Surname = surname;
-            this.Age = age;
-            this.Sex = sex;
         }
 
-
-        public void AddGrade(float grade)
+        public override void AddGrade(float grade)
         {
-            if(grade >=0 && grade <= 100)
+            if (grade >= 0 && grade <= 100)
             {
                 this.grades.Add(grade);
             }
             else
             {
-                throw new Exception ("Grade value out of range");
+                throw new Exception("Grade value out of range");
             }
         }
 
-        public void AddGrade(string grade)
+        public override void AddGrade(int grade)
+        {
+            float gradeAsFloat = grade;
+            this.AddGrade(gradeAsFloat);
+        }
+
+        public override void AddGrade(long grade)
+        {
+            float gradeAsFloat = grade;
+            this.AddGrade(gradeAsFloat);
+        }
+
+        public override void AddGrade(double grade)
+        {
+            float gradeAsFloat = grade;
+            this.AddGrade(gradeAsFloat);
+        }
+
+        public override void AddGrade(string grade)
         {
             if (float.TryParse(grade, out float result))
             {
@@ -43,28 +50,10 @@
             }
         }
 
-        public void AddGrade(int grade)
-        {
-            float gradeAsFloat = grade;
-            this.AddGrade(gradeAsFloat);
-        }
-
-        public void AddGrade(long grade)
-        {
-            float gradeAsFloat = grade;
-            this.AddGrade(gradeAsFloat);
-        }
-
-        public void AddGrade(double grade)
-        {
-            float gradeAsFloat = (float)grade;
-            this.AddGrade(gradeAsFloat);
-        }
-
-        public void AddGrade(char grade)
+        public override void AddGrade(char grade)
         {
             switch (grade)
-            { 
+            {
                 case 'A':
                 case 'a':
                     AddGrade(100);
@@ -90,12 +79,12 @@
             }
         }
 
-        public Statistics GetStatistics()
+        public override Statistics GetStatistics()
         {
             var statistics = new Statistics();
 
 
-            statistics.Average =  0f;
+            statistics.Average = 0f;
             statistics.Max = float.MinValue;
             statistics.Min = float.MaxValue;
 
