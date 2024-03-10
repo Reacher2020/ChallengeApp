@@ -7,7 +7,7 @@
             : base(name, surname, age, sex)
         {
         }
-        
+
         public override event GradeAddedDelegate GradeAdded;
 
         public override void AddGrade(float grade)
@@ -17,12 +17,11 @@
                 using (var writer = File.AppendText(fileName))
                 {
                     writer.WriteLine(grade);
+                }
 
-                    if (GradeAdded != null)
-                    {
-                        GradeAdded(this, new EventArgs());
-                    }
-
+                if (GradeAdded != null)
+                {
+                    GradeAdded(this, new EventArgs());
                 }
             }
             else
@@ -92,12 +91,7 @@
 
         public override Statistics GetStatistics()
         {
-            var result = new Statistics();
-
-            result.Average = 0f;
-            result.Max = float.MinValue;
-            result.Min = float.MaxValue;
-            var counter = 0;
+            Statistics statistics = new Statistics();
 
             if (File.Exists(fileName))
             {
@@ -107,35 +101,16 @@
                     while (line != null)
                     {
                         var number = float.Parse(line);
-                        result.Min = Math.Min(result.Min, number);
-                        result.Max = Math.Max(result.Max, number);
-                        result.Average += number;
-                        counter++;
+                        statistics.AddGrade(number);
+                        line = reader.ReadLine();
                     }
                 }
             }
-            result.Average /= counter;
-
-            switch (result.Average)
+            else
             {
-                case var average when average >= 80:
-                    result.AverageLetter = 'A';
-                    break;
-                case var average when average >= 60:
-                    result.AverageLetter = 'B';
-                    break;
-                case var average when average >= 40:
-                    result.AverageLetter = 'C';
-                    break;
-                case var average when average >= 20:
-                    result.AverageLetter = 'D';
-                    break;
-                default:
-                    result.AverageLetter = 'E';
-                    break;
-
+                throw new Exception("File grades.txt dos not exists");
             }
-            return result;
+            return statistics;
         }
     }
 }

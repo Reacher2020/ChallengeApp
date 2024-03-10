@@ -34,11 +34,11 @@ void EmployeeGradeAdded(object sender,  EventArgs args)
 
     }
 
-    var statistics = employeeInMemorry.GetStatistics();
-    Console.WriteLine($"Min :{statistics.Min}");
-    Console.WriteLine($"Max :{statistics.Max}");
-    Console.WriteLine($"Average :{statistics.Average:N2}");
-    Console.WriteLine($"Average :{statistics.AverageLetter}");
+    var statisticsInMemorry = employeeInMemorry.GetStatistics();
+    Console.WriteLine($"Min :{statisticsInMemorry.Min}");
+    Console.WriteLine($"Max :{statisticsInMemorry.Max}");
+    Console.WriteLine($"Average :{statisticsInMemorry.Average:N2}");
+    Console.WriteLine($"Average :{statisticsInMemorry.AverageLetter}");
 
     while (true)
     {
@@ -59,10 +59,10 @@ void EmployeeGradeAdded(object sender,  EventArgs args)
 
     }
 
-    statistics = employeeInFile.GetStatistics();
-    Console.WriteLine($"Min :{statistics.Min}");
-    Console.WriteLine($"Max :{statistics.Max}");
-    Console.WriteLine($"Average :{statistics.Average:N2}");
-    Console.WriteLine($"Average :{statistics.AverageLetter}");
+    var statisticsInFile = employeeInFile.GetStatistics();
+    Console.WriteLine($"Min :{statisticsInFile.Min}");
+    Console.WriteLine($"Max :{statisticsInFile.Max}");
+    Console.WriteLine($"Average :{statisticsInFile.Average:N2}");
+    Console.WriteLine($"Average :{statisticsInFile.AverageLetter}");
 
 }
